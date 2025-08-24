@@ -130,6 +130,7 @@ plt.show
 ```
 ### Obteniendo la siguiente gráfica
 <img width="569" height="450" alt="image" src="https://github.com/user-attachments/assets/0aa52329-41a9-44f0-8831-7f158e75e188" />
+
 ### Ahora calculamos los estadísticos descriptivos con funciones predefinidas de Python
 + **Media estándar**
 ```python
