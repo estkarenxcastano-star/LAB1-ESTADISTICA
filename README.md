@@ -10,7 +10,7 @@ En esta primera parte se debia descargar una señal de Physionet, importarla en 
 ## LIBRERIAS
 Las librerias que implementamos fueron las siguientes:
 
-+ **Importacion de librerias**
++ **Importación de librerias**
 ```phyton
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,7 +18,19 @@ import matplotlib.pyplot as plt
 from scipy.stats import kurtosis
 import wfdb
 ```
-
+### A partir de esto importamos la señal obtenida de Physionet
++ **Importación señal a Google Colab**
+  ```phyton
+  record = wfdb.rdrecord('mitdb/100', pn_dir='mitdb', sampto=1000)
+  signal = record.p_signal[:, 0]
+  plt.figure(figsize=(10, 4))
+  plt.plot(signal)
+  plt.title('Señal fisiológica (ECG)')
+  plt.xlabel('Tiempo (muestras)')
+  plt.ylabel('Amplitud')
+  plt.grid(True)
+  plt.show()
+  ```  
 
 
 
