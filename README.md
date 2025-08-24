@@ -36,7 +36,7 @@ plt.show()
 <img width="857" height="391" alt="image" src="https://github.com/user-attachments/assets/ca42a810-f6c0-42ea-b18a-65417c46bf14" />
 ### Luego calculamos los estadísticos descriptivos desde cero
 + **Media de la señal manual**
-'''phyton
+```phyton
 suma = 0
 contador = 0
 for valor in signal:
@@ -45,7 +45,7 @@ for valor in signal:
   print (f"Sumando valor {contador}: {valor:.5f} -> suma parcial = {suma:.5}")
 media = suma / contador
 print (f"Media = {media:.5f}")
-'''
+```
 
 
 
