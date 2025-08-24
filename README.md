@@ -357,6 +357,78 @@ S_{\text{gauss}}(t) = s(t) + n_{\text{gauss}}(t)
 $$
 
 
+```python
+sigma = 0.2 * np.std(senal)
+ruido_gaussiano = np.random.normal(0, sigma, len(senal))
+señal_gaussiana = senal + ruido_gaussiano
+snr_gaussiano = snr_db(senal, señal_gaussiana)
+
+print(f"SNR con ruido gaussiano:", snr_gaussiano,"dB")
+```
++ **SNR CON RUIDO GAUSSIANO:  14.903421323721558 dB**
+### Así obtenemos la siguiente señal
+<img width="1164" height="252" alt="image" src="https://github.com/user-attachments/assets/2e50d376-d9b0-4cf6-95fc-390c0503daec" />
+
+## b. Contaminar la señal con ruido impulso y medir el SNR:
+```python
+señal_impulso = senal.copy()
+num_spikes = int(0.005 * len(senal)) # 0.5% de muestras
+indices = np.random.choice(len(senal), size=num_spikes, replace=False)
+amplitud_spikes = 3 * np.std(senal)
+señal_impulso[indices] += np.random.choice([-1,1], size=num_spikes) * amplitud_spikes
+snr_impulso = snr_db(senal, señal_impulso)
+
+print(f"SNR con ruido impulso:", snr_impulso, "dB")
+```
++ **SNR CON RUIDO IMPULSO: 14.591673656629712 dB**
+### Así obtenemos la siguiente señal
+<img width="1179" height="248" alt="image" src="https://github.com/user-attachments/assets/41cdc99e-ff61-4b2f-a709-d34bdf65e396" />
+
+## c. Contaminar la señal con ruido tipo artefacto y medir el SNR
+```python
+f_drit = 0.3
+amplitud_drit = 0.5 * np.std(senal)
+deriva = amplitud_drit * np.sin(2 * np.pi * f_drit)
+señal_artefacto = senal + deriva
+
+duración_seg = int(0.5 * fs)
+start = len(senal)//3
+señal_artefacto[start:start+duración_seg] += 2 * np.std(senal)
+snr_artefacto = snr_db(senal, señal_artefacto)
+
+print(f"SNR con ruido tipo artefacto:", snr_artefacto, "dB")
+```
++ **SNR CON RUIDO TIPO ARTEFACTO: -5.068863092524866 dB**
+### Así obtenemos la siguiente señal
+<img width="1181" height="265" alt="image" src="https://github.com/user-attachments/assets/5b785639-8beb-471b-b527-7185377886bb" />
+
+## El código para mostrar las gráficas de las señales es el siguiente:
+```python
+plt.figure(figsize=(12,9))
+
+plt.subplot(4,1,1)
+plt.plot(t, senal)
+plt.title("Señal Origina")
+
+plt.subplot(4,1,2)
+plt.plot(t, señal_gaussiana, color="r")
+plt.title(f"Señal con Ruido Gaussiano (SNR={snr_gaussiano:.2f}) dB")
+
+plt.subplot(4,1,3)
+plt.plot(t, señal_impulso, color="g")
+plt.title(f"Señal con Ruido Impulso (SNR={snr_impulso:.2f}) dB")
+
+plt.subplot(4,1,4)
+plt.plot(t, señal_artefacto, color="m")
+plt.title(f"Señal con Ruido Artefacto (SNR={snr_artefacto:.2f}) dB")
+plt.xlabel("Tiempo [s]")
+
+plt.tight_layout()
+plt.show()
+```
+
+
+
 
 
 
