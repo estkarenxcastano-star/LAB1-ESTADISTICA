@@ -176,6 +176,7 @@ plt.show()
 Se generó una señal, con el generador de señales fisiológicas similar a la de la Parte A y esta se capturó mediante un DAQ con el driver NI MAX. Luego, la señal fue importada en Python, graficada, se calcularon sus estadísticos descriptivos y se compararon con los resultados de la Parte A.
 ## Se realizo el siguiente algoritmo
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/8c0b3cf9-3305-4fe0-a9b7-f1607f008cb8" />
+
 + **El código que se utilizó para extraer la señal del DAQ fue el siguiente**
 ```python
 !pip install nidaqmx
@@ -197,6 +198,7 @@ print("✅ Señal guardada en 'senal_DAQ.csv'")
 df.to_csv("senal_DAQ.txt", sep="\t", index=False)
 df.to_feather("senal_DAQ.feather")
 ```
+
 + **Los códigos utilizados para leer la señal desde el archivo que se extrajo y ver los datos son los siguientes:**
 
 
