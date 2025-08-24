@@ -289,11 +289,11 @@ plt.show()
 ##Comparación de Datos Estadísticos
 | **Métrica**              | **Señal A** | **Señal B** | **Interpretación** |
 |-------------------------|----------------|----------------|---------------------|
-| **Media**               | 0.0407         | 425.55         | La señal B tiene valores mucho más altos . |
-| **Mediana**             | 0.0            | 411.0          | La señal A sus datos tienden a 0 y la señal B a 411.0. |
-| **Desv. Estándar**      | 0.1608         | 63.9383        | A la señal B le varian más los datos que a la señal A. |
-| **Coef. Variación (%)** | 395.03%        | 15.02%         | La señal A es muy inestable a comparacion de la señal B que es más consistente. |
-| **Curtosis**            | 14.97          | 5.27           | La señal A tiene más valores extremos que la señal B. |
+| **Media**               | -0.3119        | -0.1949        | Ambas negativas; la señal B está más cercana a cero. |
+| **Desv. Estándar**      | 0.1834         | 0.3586         | La señal B tiene el doble de dispersión → mayor variabilidad. |
+| **Coef. Variación **    | 58.79          | -1.84          | En la señal A es muy alto, porque los picos (QRS) son muy marcados respecto a la media. En la señal B el valor es bajo y poco representativo, ya que la media cercana a cero hace que el cálculo pierda significado. |
+| **Curtosis**            | 24.34          | mucho menor, según histograma        | En la señal A, la curtosis extremadamente alta indica que los valores están concentrados y aparecen picos muy definidos (QRS). En la señal B la distribución es más uniforme, sin picos extremos. |
+| **Histograma**          |
 
 
 
