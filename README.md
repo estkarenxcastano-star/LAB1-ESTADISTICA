@@ -77,10 +77,10 @@ for valor in signal:
   print (f"Curtosis = {curtosis:.5f}")
 ```
 ### Obteniendo como resultados:
-+ **Media:-0.31188**
-+ **Desviación estándar:0.18336**
-+ **Coeficiente de variación:58.78942**
-+ **Curtosis:24.33657**
++ **Media:  -0.31188**
++ **Desviación estándar:  0.18336**
++ **Coeficiente de variación:  58.78942**
++ **Curtosis:  24.33657**
 ### Histograma manual
 ```python
 def calcular_barras(datos):
