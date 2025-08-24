@@ -426,7 +426,18 @@ plt.xlabel("Tiempo [s]")
 plt.tight_layout()
 plt.show()
 ```
+## Comparando las señales contaminadas con los diferentes ruidos se puede concluir
++ **Señal Original vs Señal con ruido Gaussiano**
 
+El ruido gaussiano introduce fluctuaciones aleatorias en la señal, reduciendo la relación señal-ruido (SNR ≈ 14.9 dB). Aunque el ruido afecta la claridad, la información principal de la señal (los picos característicos) sigue siendo reconocible, lo que indica que la señal aún conserva su estructura, pero con menor calidad.
+
++ **Señal Original vs Señal con ruido impulso**
+
+A diferencia del ruido gaussiano, que introduce variaciones constantes y aleatorias, el ruido de impulso genera alteraciones puntuales pero de gran magnitud, lo que puede distorsionar severamente la señal en ciertos momentos. Aunque la señal principal aún se puede identificar, los impulsos reducen la calidad y dificultan el análisis automático.
+
++ **Señal Original vs Señal con ruido artefacto**
+
+El ruido de artefacto afecta la señal de forma más severa que el gaussiano o el de impulso, ya que introduce una alteración sostenida en la amplitud de la señal y reduce considerablemente el SNR (≈ -5 dB). Esto hace que la señal original se vuelva difícil de analizar y su interpretación sea poco confiable.
 
 
 
