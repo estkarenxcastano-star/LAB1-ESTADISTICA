@@ -286,6 +286,16 @@ plt.show()
 + **Obtenemos la siguiente gráfica**
 <img width="858" height="468" alt="image" src="https://github.com/user-attachments/assets/f1639a8e-5ef0-4b53-bc2c-76310ab25100" />
 
+##Comparación de Datos Estadísticos
+| **Métrica**              | **Señal A** | **Señal B** | **Interpretación** |
+|-------------------------|----------------|----------------|---------------------|
+| **Media**               | 0.0407         | 425.55         | La señal B tiene valores mucho más altos . |
+| **Mediana**             | 0.0            | 411.0          | La señal A sus datos tienden a 0 y la señal B a 411.0. |
+| **Desv. Estándar**      | 0.1608         | 63.9383        | A la señal B le varian más los datos que a la señal A. |
+| **Coef. Variación (%)** | 395.03%        | 15.02%         | La señal A es muy inestable a comparacion de la señal B que es más consistente. |
+| **Curtosis**            | 14.97          | 5.27           | La señal A tiene más valores extremos que la señal B. |
+
+
 
 
 
