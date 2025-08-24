@@ -7,10 +7,10 @@ En esta primera parte se debia descargar una señal de Physionet, importarla en 
 ## Se realizo el siguiente algoritmo
 ![WhatsApp Image 2025-08-24 at 09 26 13](https://github.com/user-attachments/assets/b2a0280e-e4b1-4c46-8c10-950cb7d5ae2a)
 
-##LIBRERIAS
+## LIBRERIAS
 Las librerias que implementamos fueron las siguientes:
 
-+**Importacion de librerias**
++ **Importacion de librerias**
 ```phyton
 import numpy as np
 import matplotlib.pyplot as plt
