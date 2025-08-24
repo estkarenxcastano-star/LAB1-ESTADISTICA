@@ -20,17 +20,17 @@ import wfdb
 ```
 ### A partir de esto importamos la señal obtenida de Physionet
 + **Importación señal a Google Colab**
-  ```phyton
-  record = wfdb.rdrecord('mitdb/100', pn_dir='mitdb', sampto=1000)
-  signal = record.p_signal[:, 0]
-  plt.figure(figsize=(10, 4))
-  plt.plot(signal)
-  plt.title('Señal fisiológica (ECG)')
-  plt.xlabel('Tiempo (muestras)')
-  plt.ylabel('Amplitud')
-  plt.grid(True)
-  plt.show()
-  ```  
+```phyton
+record = wfdb.rdrecord('mitdb/100', pn_dir='mitdb', sampto=1000)
+signal = record.p_signal[:, 0]
+plt.figure(figsize=(10, 4))
+plt.plot(signal)
+plt.title('Señal fisiológica (ECG)')
+plt.xlabel('Tiempo (muestras)')
+plt.ylabel('Amplitud')
+plt.grid(True)
+plt.show()
+```  
 
 
 
