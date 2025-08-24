@@ -336,7 +336,21 @@ def snr_db(senal_original, senal_contaminada):
   return 10*np.log10(P_S/P_N)
 ```
 + La frecuencia de muestreo es de 10.000Hz
-  
+
+## a. Contaminar la señal con ruido gaussiano y medir el SNR
+
+El **ruido gaussiano** es un tipo de ruido aleatorio que sigue una **distribución normal** (media y varianza).  
+En señales biomédicas puede aparecer por contracciones musculares cercanas al electrodo o por el ruido electrónico del equipo.  
+
+En este caso, lo generamos por medio de código:  
+
+1. Calcular la **desviación estándar** de la señal original.  
+2. Generar un vector de ruido gaussiano:  
+   ```python
+   ruido_gauss = np.random.normal(0, sigma, len(senal))
+   ```
+3. Contaminar la señal sumando el ruido
+Sgauss = senal + ruido_gauss
 
 
 
