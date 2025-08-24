@@ -224,6 +224,67 @@ print(señal.head())
 ### Para obtener la siguiente gráfica
 <img width="576" height="455" alt="image" src="https://github.com/user-attachments/assets/a2856286-ffea-49b9-83e1-1d75f89d8a6f" />
 
+### Ahora calcularemos los datos estádisticos de la señal
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/senal_DAQ.txt",
+                 sep=r"\s+", header=None, skiprows=1, names=["Tiempo", "Voltaje"])
+print(df.head())
+
+senal = df["Voltaje"].astype(float).to_numpy()
+print(type(senal), senal.dtype)
+print("Primeros valores:", senal[:10])
+
+
+# a. Media
+media_2 = np.mean(senal)
+
+# b. Desviación estándar
+desv = np.std(senal)
+
+# c. Coeficiente de variación
+CV = desv / media_2 if media_2 != 0 else np.nan
+
+
+print("Datos estadísticos")
+print(f"Media: {media_2}")
+print(f"Desviación estándar: {desv}")
+print(f"Coeficiente de variación: {CV}")
+```
++ **Obtenemos los siguientes resultados**
++ **Media:  -0.1948625739533105**
++ **Desviación estándar:  0.3585715646805795**
++ **Coeficiente de variación:  -1.8401253632546906**
+### Histograma
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/senal_DAQ.txt", sep=r"\s+", header=None, skiprows=1, names=["Tiempo", "Voltaje"])
+
+print(df.head(10))
+print(df.info())
+
+senal = df["Voltaje"].astype(float).to_numpy()
+print("Primeros valores de amplitud", senal[:10])
+# Histograma
+
+min_val = np.min(senal)
+max_val = np.max(senal)
+
+plt.figure(figsize=(10,5))
+plt.hist(senal, bins=100, range=(min_val, max_val), edgecolor="black")
+plt.xlabel("Amplitud [V]")
+plt.ylabel("Frecuencia")
+plt.title("Histograma de la señal generada")
+plt.grid(True)
+plt.show()
+```
++ **Obtenemos la siguiente gráfica**
+<img width="858" height="468" alt="image" src="https://github.com/user-attachments/assets/f1639a8e-5ef0-4b53-bc2c-76310ab25100" />
 
 
 
