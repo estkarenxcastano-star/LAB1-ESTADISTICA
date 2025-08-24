@@ -253,7 +253,7 @@ print(f"Media: {media_2}")
 print(f"Desviación estándar: {desv}")
 print(f"Coeficiente de variación: {CV}")
 ```
-+ **Obtenemos los siguientes resultados**
+### Obtenemos los siguientes resultados
 + **Media:  -0.1948625739533105**
 + **Desviación estándar:  0.3585715646805795**
 + **Coeficiente de variación:  -1.8401253632546906**
