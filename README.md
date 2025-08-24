@@ -300,9 +300,18 @@ Se debía trabajar con la señal obtenida en la PARTE B, contaminarla con distin
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/c25d0b63-de83-434c-a3d9-3bdf2a391d19" />
 
 + **Investigar que es la relación señal-ruido (SNR)**
-SNR(dB)=10log(S/N) 
-Donde S representa la potencia de la señal ruidosa y N representa la potencia del ruido.
-El SNR o relación señal-ruido es la relación entre la información deseada o la potencia de una señal y la señal no deseada o la potencia del ruido de fondo. En otras palabras, la SNR es la relación entre la potencia de la señal y la potencia del ruido, y su unidad de expresión suele ser el decibelio [dB].
+El **SNR** o relación señal-ruido es la relación entre la información deseada (potencia de la señal) y la señal no deseada (potencia del ruido de fondo).  
+En otras palabras, el SNR compara la potencia de la señal con la potencia del ruido, y su unidad de expresión suele ser el decibelio (**dB**).  
+
+La ecuación que lo define es:  
+
+$$
+SNR(dB) = 10 \cdot \log \left(\frac{S}{N}\right)
+$$  
+
+Donde:  
+- **S** = potencia de la señal  
+- **N** = potencia del ruido
 + 
 
 
