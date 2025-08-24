@@ -313,7 +313,7 @@ $$
 Donde:  
 - **S** = potencia de la señal  
 - **N** = potencia del ruido
-### Ahora Calculamos la relación señal-ruido (SNR) en decibelios (dB) de la señal B
+### Ahora calculamos la relación señal-ruido (SNR) en decibelios (dB) de la señal B
 ```python
 # Primero cargamos nuestra señal:
 
@@ -335,7 +335,7 @@ def snr_db(senal_original, senal_contaminada):
 
   return 10*np.log10(P_S/P_N)
 ```
-+ La frecuencia de muestreo es de 10000Hz
++ La frecuencia de muestreo es de 10.000Hz
   
 
 
