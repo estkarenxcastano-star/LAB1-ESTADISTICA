@@ -34,6 +34,7 @@ plt.show()
 ### Así obtuvimos la siguiente gráfica:
 + **Gráfica señal de Physionet**
 <img width="857" height="391" alt="image" src="https://github.com/user-attachments/assets/ca42a810-f6c0-42ea-b18a-65417c46bf14" />
+
 ### Luego calculamos los estadísticos descriptivos desde cero
 + **Media de la señal manual**
 ```phyton
