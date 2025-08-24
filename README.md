@@ -297,7 +297,7 @@ plt.show()
 # PARTE C
 Se debía trabajar con la señal obtenida en la PARTE B, contaminarla con distintos tipos de ruido, calcular la relación señal-ruido (SNR) en cada caso.
 ## Se realizo el siguiente algoritmo
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/c25d0b63-de83-434c-a3d9-3bdf2a391d19" />
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/52d3ca29-e2b9-4307-88d4-508426303ced" />
 
 + **Investigar que es la relación señal-ruido (SNR)**
 
@@ -313,7 +313,30 @@ $$
 Donde:  
 - **S** = potencia de la señal  
 - **N** = potencia del ruido
-+ 
+### Ahora Calculamos la relación señal-ruido (SNR) en decibelios (dB) de la señal B
+```python
+# Primero cargamos nuestra señal:
+
+data = np.loadtxt("senal_DAQ.txt", skiprows=1) # saltamos el encabezado
+t = data[:,0] # tiempo en segundos
+senal = data[:,1] # voltaje en V
+
+fs = int (1 / (t[1] - t[0]))
+print("Frecuencia de muestreo:", fs, "Hz")
+
+# Funciones auxiliares
+def potencia(x):
+  return np.mean(x**2)
+
+def snr_db(senal_original, senal_contaminada):
+  ruido = senal_contaminada - senal_original
+  P_S = potencia(senal_original)
+  P_N = potencia(ruido)
+
+  return 10*np.log10(P_S/P_N)
+```
++ La frecuencia de muestreo es de 10000Hz
+  
 
 
 
