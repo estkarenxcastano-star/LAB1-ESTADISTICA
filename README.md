@@ -45,7 +45,7 @@ for valor in signal:
   print (f"Sumando valor {contador}: {valor:.5f} -> suma parcial = {suma:.5}")
 media = suma / contador
 print (f"Media = {media:.5f}")
-```
+``` 
 
 
 
