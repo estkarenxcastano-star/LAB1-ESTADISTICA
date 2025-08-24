@@ -172,6 +172,54 @@ plt.show()
 ### Obteniendo la siguiente gráfica
 <img width="847" height="391" alt="image" src="https://github.com/user-attachments/assets/96d3cf78-c957-44ad-90c1-3872aa5e6d2c" />
 
+# PARTE B
+Se generó una señal, con el generador de señales fisiológicas similar a la de la Parte A y esta se capturó mediante un DAQ con el driver NI MAX. Luego, la señal fue importada en Python, graficada, se calcularon sus estadísticos descriptivos y se compararon con los resultados de la Parte A.
+## Se realizo el siguiente algoritmo
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/8c0b3cf9-3305-4fe0-a9b7-f1607f008cb8" />
++ **El código que se utilizó para extraer la señal del DAQ fue el siguiente**
+```python
+!pip install nidaqmx
+import nidaqmx
+import numpy as np
+import pandas as pd
+
+# Parámetros de adquisición
+canal = "Dev1/ai0"       # Nombre del canal (ajusta si usas otro, ej: Dev1/ai1)
+fs = 10000               # Frecuencia de muestreo en Hz
+num_muestras = 5000      # Número de muestras a adquirir
+
+# Crear la tarea de adquisición
+with nidaqmx.Task() as task:
+    task.ai_channels.add_ai_voltage_chan(canal)  # Canal analógico
+    task.timing.cfg_samp_clk_timing(fs, samps_per_chan=num_muestras)
+
+    # Leer datos
+    data = task.read(number_of_samples_per_channel=num_muestras)
+    data = np.array(data)
+
+# Crear vector de tiempo
+tiempo = np.linspace(0, num_muestras/fs, num_muestras, endpoint=False)
+
+# Guardar en CSV
+df = pd.DataFrame({"Tiempo (s)": tiempo, "Voltaje (V)": data})
+df.to_csv("senal_DAQ.csv", index=False)
+
+print("✅ Señal guardada en 'senal_DAQ.csv'")
+
+# Guardar en TXT
+df.to_csv("senal_DAQ.txt", sep="\t", index=False)
+
+# Guardar en FEATHER
+df.to_feather("senal_DAQ.feather")
+```
++ **Los códigos utilizados para leer la señal desde el archivo que se extrajo y ver los datos son los siguientes:**
++ ```python
+  import numpy as np
+  señal = np.loadtxt("senal_DAQ.txt", skiprows=1)
+  print(señal[:10])
+```
+
+
 
 
 
