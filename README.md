@@ -291,7 +291,7 @@ plt.show()
 |-------------------------|----------------|----------------|---------------------|
 | **Media**               | -0.3119        | -0.1949        | Ambas negativas; la señal B está más cercana a cero. |
 | **Desv. Estándar**      | 0.1834         | 0.3586         | La señal B tiene el doble de dispersión → mayor variabilidad. |
-| **Coef. Variación **    | 58.79          | -1.84          | En la señal A es muy alto, porque los picos (QRS) son muy marcados respecto a la media. En la señal B el valor es bajo y poco representativo, ya que la media cercana a cero hace que el cálculo pierda significado. |
+| **Coef. Variación**    | 58.79          | -1.84          | En la señal A es muy alto, porque los picos (QRS) son muy marcados respecto a la media. En la señal B el valor es bajo y poco representativo, ya que la media cercana a cero hace que el cálculo pierda significado. |
 | **Curtosis**            | 24.34          | mucho menor, según histograma        | En la señal A, la curtosis extremadamente alta indica que los valores están concentrados y aparecen picos muy definidos (QRS). En la señal B la distribución es más uniforme, sin picos extremos. |
 | **Histograma**          | distribución centrada, con picos muy definidos    | Valores dispersos, amplitudes variadas, sin picos claros  |   La señal A refleja la estructura fisiológica de un ECG real; la señal B es más uniforme y ruidosa, con menos fidelidad a la realidad.  |
 
