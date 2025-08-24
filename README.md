@@ -131,6 +131,47 @@ plt.show
 ### Obteniendo la siguiente gráfica
 <img width="569" height="450" alt="image" src="https://github.com/user-attachments/assets/0aa52329-41a9-44f0-8831-7f158e75e188" />
 
+### Ahora calculamos los estadísticos descriptivos con funciones predefinidas de Python
++ **Media estándar**
+```python
+media_np = np.mean(signal)
+media_np
+```
++ **Desviación estándar**
+```python
+desv_std_np = np.std (signal, ddof=1)
+desv_std_np
+```
++ **Coeficiente de variación**
+```python
+cv_np = (desv_std_np / media_np) * 100
+cv_np
+```
++ **Curtosis**
+```python
+curtosis_scipy = kurtosis(signal, fisher=True, bias=False)
+curtosis_scipy
+```
+### Obteniendo como resultados
++ **Media:  -0.311885**
++ **Desviación estándar:  0.18335536797695878**
++ **Coeficiente de variación:  -58.789415321980464**
++ **Curtosis:  24.464720388248345**
+### Histograma
+```python
+min_val = np.min(signal)
+max_val = np.max(signal)
+plt.figure(figsize=(10,4))
+plt.hist(signal, bins=100, range=(min_val, max_val), edgecolor="black", alpha=0.7)
+plt.xlabel("Amplitud")
+plt.ylabel("Frecuencia")
+plt.title("Histograma")
+plt.grid(axis="y", alpha=0.5)
+plt.show()
+```
+### Obteniendo la siguiente gráfica
+<img width="847" height="391" alt="image" src="https://github.com/user-attachments/assets/96d3cf78-c957-44ad-90c1-3872aa5e6d2c" />
+
 
 
 
