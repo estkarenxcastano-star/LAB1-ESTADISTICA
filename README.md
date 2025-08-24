@@ -200,6 +200,31 @@ df.to_feather("senal_DAQ.feather")
 ```
 
 + **Los códigos utilizados para leer la señal desde el archivo que se extrajo y ver los datos son los siguientes:**
+```python
+import numpy as np
+
+señal = np.loadtxt("senal_DAQ.txt", skiprows=1)
+print(señal[:10])
+```
+```python
+import pandas as pd
+
+señal = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/senal_DAQ.txt", sep = "\s+", header=None, skiprows=1)
+
+print(señal.head())
+```
++ **Ahora se grafica la señal que obtuvimos del generador de señales fisiológicas**
+```python
+import pandas as pd
+
+señal = pd.read_csv("/content/drive/MyDrive/Colab Notebooks/senal_DAQ.txt", sep = "\s+", header=None, skiprows=1)
+
+print(señal.head())
+```
+### Para obtener la siguiente gráfica
+<img width="576" height="455" alt="image" src="https://github.com/user-attachments/assets/a2856286-ffea-49b9-83e1-1d75f89d8a6f" />
+
+
 
 
 
