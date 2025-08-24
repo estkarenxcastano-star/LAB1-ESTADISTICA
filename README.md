@@ -183,40 +183,40 @@ import nidaqmx
 import numpy as np
 import pandas as pd
 
-# Parámetros de adquisición
+Parámetros de adquisición
 canal = "Dev1/ai0"       # Nombre del canal (ajusta si usas otro, ej: Dev1/ai1)
 fs = 10000               # Frecuencia de muestreo en Hz
 num_muestras = 5000      # Número de muestras a adquirir
 
-# Crear la tarea de adquisición
+Crear la tarea de adquisición
 with nidaqmx.Task() as task:
     task.ai_channels.add_ai_voltage_chan(canal)  # Canal analógico
     task.timing.cfg_samp_clk_timing(fs, samps_per_chan=num_muestras)
 
-    # Leer datos
+Leer datos
     data = task.read(number_of_samples_per_channel=num_muestras)
     data = np.array(data)
 
-# Crear vector de tiempo
+Crear vector de tiempo
 tiempo = np.linspace(0, num_muestras/fs, num_muestras, endpoint=False)
 
-# Guardar en CSV
+Guardar en CSV
 df = pd.DataFrame({"Tiempo (s)": tiempo, "Voltaje (V)": data})
 df.to_csv("senal_DAQ.csv", index=False)
 
 print("✅ Señal guardada en 'senal_DAQ.csv'")
 
-# Guardar en TXT
+Guardar en TXT
 df.to_csv("senal_DAQ.txt", sep="\t", index=False)
 
-# Guardar en FEATHER
+Guardar en FEATHER
 df.to_feather("senal_DAQ.feather")
 ```
 + **Los códigos utilizados para leer la señal desde el archivo que se extrajo y ver los datos son los siguientes:**
-+ ```python
-  import numpy as np
-  señal = np.loadtxt("senal_DAQ.txt", skiprows=1)
-  print(señal[:10])
+```python
+import numpy as np
+señal = np.loadtxt("senal_DAQ.txt", skiprows=1)
+print(señal[:10])
 ```
 
 
