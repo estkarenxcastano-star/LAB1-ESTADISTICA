@@ -350,7 +350,8 @@ En este caso, lo generamos por medio de código:
    ruido_gauss = np.random.normal(0, sigma, len(senal))
    ```
 3. Contaminar la señal sumando el ruido
-Sgauss = senal + ruido_gauss
+   S<sub>gauss</sub>(t) = s(t) + n<sub>gauss</sub>(t)
+   
 
 
 
