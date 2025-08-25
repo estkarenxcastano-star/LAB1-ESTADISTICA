@@ -19,6 +19,7 @@ from scipy.stats import kurtosis
 import wfdb
 ```
 ### A partir de esto importamos la señal obtenida de Physionet
+La señal que descargamos por Pysionet es una señal que corresponde a un ECG, es una señal fisiológica periódica digitalizada, que refleja la actividad eléctrica del corazón. Se observan picos agudos y de gran amplitud, que se repiten de forma regular a lo largo del tiempo, también muestra ciclos más o menos constantes, lo que nos indica un ritmo cardíaco estable.
 + **Importación señal a Google Colab**
 ```phyton
 record = wfdb.rdrecord('mitdb/100', pn_dir='mitdb', sampto=1000)
